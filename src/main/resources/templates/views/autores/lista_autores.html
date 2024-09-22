@@ -1,0 +1,80 @@
+
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head th:include="plantilla/template::head">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista Autores</title>
+      </head>  
+  
+  <body>
+	<header th:include="plantilla/template::header"></header>  
+	   	   
+	   
+	   <div class="container">
+      <h1 th:text="${titulo}"></h1>
+        </div>
+      
+      
+         <div class="container">
+
+<a class="btn btn-primary" th:href="@{/autores/create_autor}"> Crear Autor</a>
+
+  <table class="table">
+    <thead>
+      <tr>
+		
+		<th   style="visibility:collapse; display:none;"  scope="col"></th>
+		  <th scope="col">Nombres</th>
+        <th scope="col">Apellidos</th>        
+        <th scope="col">Direccion</th>
+        <th scope="col">Contacto</th>        
+        <th scope="col">Estado</th>
+        <th scope="col">Acción</th>
+        <th scope="col">Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="iterndo_autor: ${var_autores}">
+       <td style="visibility:collapse; display:none;"   th:text="${iterndo_autor.id}" ></td>
+        <td th:text="${iterndo_autor.nombre}"></td>
+        <td th:text="${iterndo_autor.apellido}"></td>
+        
+        <td th:text="${iterndo_autor.direccion}"></td>
+   
+       
+        <td th:text="${iterndo_autor.numero_contacto}"></td>
+        <td th:text="${iterndo_autor.estado}"></td>
+        <td><a  class="btn btn-warning" th:href="@{productos/editar_pro/{id} (id=${iterndo_autor.id})}">Editar</a> </td>
+        <td><a  class="btn btn-danger" th:href="@{productos/delete_pro/{id} (id=${iterndo_autor.id}) }">Eliminar</a> </td>
+      </tr>       
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    
+    
+    <footer th:include="plantilla/template:: footer"></footer>  
+     </body>
+</html>
