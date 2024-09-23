@@ -12,7 +12,7 @@ import com.web.app.entity.Autor;
 import com.web.app.service.IAutorService;
 
 @Controller
-@RequestMapping("views/autores") // hay una carpeta en views que se llama autores
+@RequestMapping("autores") // hay una carpeta en views que se llama autores
 public class AutorController {
 
 	@Autowired
@@ -24,6 +24,12 @@ public class AutorController {
 		model.addAttribute("var_autores",listadoAutores);
 		model.addAttribute("titulo", "Lista de Autores");
 		return "/views/autores/lista_autores";
+	}
+	
+	@GetMapping("/create_autor")
+	public String Crear_Autores(Model model) {
+		model.addAttribute("titulo_crear", "Crear Autores");
+		return "/views/autores/frm_crear_autor";
 	}
 	
 }

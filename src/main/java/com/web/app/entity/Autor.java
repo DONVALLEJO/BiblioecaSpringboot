@@ -41,7 +41,7 @@ public class Autor implements Serializable {
 	 
 	 
 	 @Column(nullable = false)
-	private String direccion;
+	private String nacionalidad;
 	
 	@Column(nullable = false)
 	  @ColumnDefault("'Activo'")
@@ -79,12 +79,12 @@ public class Autor implements Serializable {
 		this.numero_contacto = numero_contacto;
 	}
 
-	public String getDireccion() {
-		return direccion;
+	public String getNacionalidad() {
+		return nacionalidad;
 	}
 
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
+	public void setDireccion(String nacionalidad) {
+		this.nacionalidad = nacionalidad;
 	}
 
 	public String getEstado() {
@@ -100,7 +100,7 @@ public class Autor implements Serializable {
 	@Override
 	public String toString() {
 		return "Autor [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", numero_contacto="
-				+ numero_contacto + ", direccion=" + direccion + ", estado=" + estado + "]";
+				+ numero_contacto + ", nacionalidad=" + nacionalidad + ", estado=" + estado + "]";
 	}
 	
 	

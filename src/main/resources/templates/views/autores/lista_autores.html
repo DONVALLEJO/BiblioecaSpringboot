@@ -17,7 +17,9 @@
       
          <div class="container">
 
-<a class="btn btn-primary" th:href="@{/autores/create_autor}"> Crear Autor</a>
+<a class="btn btn-primary" th:href="@{/autores/create_autor}"
+   th:text="'Nuevo Autor'" title="Crear Nuevo Registro"> 
+   </a>
 
   <table class="table">
     <thead>
@@ -26,20 +28,20 @@
 		<th   style="visibility:collapse; display:none;"  scope="col"></th>
 		  <th scope="col">Nombres</th>
         <th scope="col">Apellidos</th>        
-        <th scope="col">Direccion</th>
+        <th scope="col">Nacionalidad</th>
         <th scope="col">Contacto</th>        
         <th scope="col">Estado</th>
         <th scope="col">Acción</th>
         <th scope="col">Acción</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="table-group-divider">
       <tr th:each="iterndo_autor: ${var_autores}">
        <td style="visibility:collapse; display:none;"   th:text="${iterndo_autor.id}" ></td>
         <td th:text="${iterndo_autor.nombre}"></td>
         <td th:text="${iterndo_autor.apellido}"></td>
         
-        <td th:text="${iterndo_autor.direccion}"></td>
+        <td th:text="${iterndo_autor.nacionalidad}"></td>
    
        
         <td th:text="${iterndo_autor.numero_contacto}"></td>

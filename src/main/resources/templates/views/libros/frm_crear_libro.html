@@ -1,0 +1,84 @@
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="plantilla/template::head">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Libros Nuevo</title>
+</head>
+
+<body>
+	<header th:include="plantilla/template::header"></header>
+
+
+	<div class="container">
+		<h1 th:text="${titulo_crear}"></h1>
+	</div>
+
+
+	<div class="container">
+
+		<a class="btn btn-primary mb-3" th:href="@{/libros/}">Lista de Libros</a>
+
+		<form>
+
+			<div class="mb-3">
+				<label for="" class="form-label">Nombre del Libro</label>
+				<input type="text" class="form-control" id="nombre_libro" name="nombre_libro" required>
+			</div>
+
+			<div class="mb-3">
+				<label for="" class="form-label">Genero del Libro</label>
+				<input type="text" class="form-control" id="nombre" name="apelllido" required>
+
+			</div>
+
+
+			<div class="mb-3">
+				<label for="" class="form-label">Editorial</label>
+				<input type="text" class="form-control" id="nacionalidad" name="nacionalidad" required>
+
+			</div>
+
+
+			<div class="mb-3">
+				<label for="" class="form-label">Numero de paginas</label>
+				<input type="number" class="form-control" id="paginas" name="paginas" required>
+
+			</div>
+
+
+
+			<div class="mb-3">
+				<label for="" class="form-label">Autor</label>
+				<select class="form-control" id="autor_libro">
+					<option>Escaja el escritor</option>
+					<option th:each="autor:${var_autores}" value="${autor.id}" th:text="${autor.nombre}" />
+				</select>
+			</div>
+
+
+
+
+			<div class="mb-3">
+				<label for="" class="form-label">Precio</label>
+				<input type="number" class="form-control" id="precio" name="precio" required>
+
+			</div>
+
+
+
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+			
+			<button type="button" value=th:href="@{/libros/}" class="btn btn-dark btn-sm">
+				
+				Atras</button>
+		</form>
+
+
+	</div>
+
+	<footer th:include="plantilla/template:: footer"></footer>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="plantilla/template::head">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lista Autores</title>
+</head>
+
+<body>
+	<header th:include="plantilla/template::header"></header>
+
+
+	<div class="container">
+		<h1 th:text="${titulo}"></h1>
+	</div>
+
+
+	<div class="container">
+
+		<a class="btn btn-primary" th:href="@{/libros/create_libro}"> Crear Libro</a>
+
+
+
+
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th style="visibility:collapse; display:none;" scope="col"></th>
+					<th scope="col">Nombres Libro</th>
+					<th scope="col">Editorial</th>
+					<th scope="col">Genero</th>
+					<th scope="col">Autor</th>
+					<th scope="col">Fecha edicion</th>
+					<th scope="col">#Paginas</th>
+					<th scope="col">$Precio</th>
+					<th scope="col">Estado</th>
+				</tr>
+			</thead>
+			<tbody class="table-group-divider">
+				<tr th:each="iterando_libro: ${var_libro}">
+					<td style="visibility:collapse; display:none;" th:text="${iterando_libro.id}"></td>
+					<td th:text="${iterando_libro.nombre_libro}"></td>
+					<td th:text="${iterando_libro.editorial}"></td>
+					<td th:text="${iterando_libro.genero}"></td>
+					<td th:text="${iterando_libro.fk_autor_libro.nombre}"></td>
+
+
+					<td th:text="${iterando_libro.fecha_edicion}"></td>
+					<td th:text="${iterando_libro.numero_paginas}"></td>
+					<td th:text="${iterando_libro.precio}"></td>
+					<td th:text="${iterando_libro.estado}"></td>
+
+					<td><a class="btn btn-warning"
+							th:href="@{libros/editar_lib/{id} (id=${iterando_libro.id})}">Editar</a> </td>
+					<td><a class="btn btn-danger"
+							th:href="@{libros/delete_lib/{id} (id=${iterando_libro.id}) }">Eliminar</a> </td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+
+	<footer th:include="plantilla/template:: footer"></footer>
+</body>
+
+</html>

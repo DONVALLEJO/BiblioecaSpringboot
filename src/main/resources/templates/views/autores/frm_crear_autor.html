@@ -1,0 +1,75 @@
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head th:include="plantilla/template::head">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lista Autores</title>
+</head>
+
+<body>
+	<header th:include="plantilla/template::header"></header>
+
+
+
+<div class="container">
+		<h1 th:text="${titulo_crear}"></h1>
+	</div>
+
+
+	<div class="container">
+
+		<a class="btn btn-primary mb-3" th:href="@{/autores/}">Lista de Autores</a>
+
+
+		<form method="post" action="" action="">
+			<div class="mb-3">
+				<label for="" class="form-label">Nombre del Autor</label>
+				<input type="text"  class="form-control" id="nombre" name="nombre" required>
+
+			</div>
+
+
+
+			<div class="mb-3">
+				<label for="" class="form-label">Apellido del Autor</label>
+				<input type="text" class="form-control" id="nombre" name="apelllido" required>
+
+			</div>
+
+
+
+			<div class="mb-3">
+				<label for="" class="form-label">Nacionalidad del Autor</label>
+				<input type="text" class="form-control" id="nacionalidad" name="nacionalidad" required>
+
+			</div>
+
+
+			<div class="mb-3">
+				<label for="" class="form-label">Numero contacto</label>
+				<input type="number" class="form-control" id="contacto" name="contacto" required>
+
+			</div>
+
+			<button type="submit" class="btn btn-primary btn-sm">
+				
+				Guadar</button> 
+			
+			<button type="submit" class="btn btn-dark btn-sm">
+				
+				Atras</button>
+		</form>
+
+
+
+
+	</div>
+
+
+	
+
+
+	<footer th:include="plantilla/template:: footer"></footer>
+</body>
+
+</html>

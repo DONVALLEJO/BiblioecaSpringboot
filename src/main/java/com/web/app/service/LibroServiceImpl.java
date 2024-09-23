@@ -3,12 +3,14 @@ package com.web.app.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.web.app.entity.Autor;
 import com.web.app.entity.Libro;
 
 import com.web.app.repository.LibroRepository;
 
+@Service
 public class LibroServiceImpl implements ILibroService {
 
 	
